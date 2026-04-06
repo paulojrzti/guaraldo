@@ -806,6 +806,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 @media (max-width: 768px) {
   .hero {
     height: 100dvh;
+    justify-content: flex-end; /* texto vai para o rodapé, rosto fica livre no topo */
   }
   .hero::before {
     background: url("assets/Dr Reinaldo-1.jpg") center center / cover no-repeat;
@@ -815,18 +816,32 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     background: linear-gradient(
       to top,
       rgba(6,6,6,1)    0%,
-      rgba(6,6,6,0.95) 30%,
-      rgba(6,6,6,0.80) 55%,
-      rgba(6,6,6,0.25) 78%,
-      rgba(6,6,6,0.05) 100%
+      rgba(6,6,6,0.97) 35%,
+      rgba(6,6,6,0.70) 58%,
+      rgba(6,6,6,0.15) 80%,
+      rgba(6,6,6,0.00) 100%
     );
   }
-  .hero-inner { align-items: center; }
+  .hero-inner {
+    align-items: center;
+    padding-block: 0 2.5rem; /* sem padding-top, só embaixo */
+  }
+  .hero-tiktok-icon { display: none; } /* remove ícone para ganhar espaço */
   .hero-content {
     margin-left: 0;
     max-width: 100%;
     align-items: center;
     text-align: center;
+  }
+  .hero-headline { font-size: clamp(1.4rem, 5.5vw, 1.85rem); }
+  .hero-sub {
+    font-size: 0.83rem;
+    margin-bottom: 1.2rem;
+  }
+  .badge-authority {
+    font-size: 0.68rem;
+    padding: 0.28rem 0.8rem;
+    margin-bottom: 0.8rem;
   }
   .hero-cta-group { align-items: stretch; }
   .hero-trust-line { justify-content: center; }
