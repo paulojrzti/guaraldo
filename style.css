@@ -34,8 +34,8 @@
   --clr-bad:  var(--clr-red);
 
   /* type */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-display: 'TikTok Sans', 'Nunito', system-ui, sans-serif;
+  --font-sans:    'TikTok Sans', 'Manrope', system-ui, sans-serif;
 
   --container: 1140px;
   --radius:    10px;
@@ -1114,17 +1114,16 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     justify-content: flex-end;
   }
   .hero::before {
-    background: url("assets/Dr Reinaldo-1.jpg") center 25% / cover no-repeat;
+    background: url("assets/Dr Reinaldo-1.jpg") center 5% / cover no-repeat;
     transform: none;
   }
   .hero-overlay {
     background: linear-gradient(
       to top,
-      rgba(6,6,6,1)    0%,
-      rgba(6,6,6,0.98) 40%,
-      rgba(6,6,6,0.75) 62%,
-      rgba(6,6,6,0.15) 82%,
-      rgba(6,6,6,0.00) 100%
+      rgba(3,3,3,1)    0%,
+      rgba(3,3,3,0.98) 45%,
+      rgba(3,3,3,0.60) 70%,
+      rgba(3,3,3,0.00) 100%
     );
   }
   .hero-inner {
