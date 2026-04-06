@@ -169,6 +169,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   max-width: 160px;
 }
 .logo-mark { color: var(--clr-cyan); font-size: 1.1rem; }
+.logo-img { height: 38px; width: auto; display: block; }
 
 /* ─────────────────────────────────────────────────────
    HERO
