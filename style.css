@@ -104,7 +104,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--clr-cyan);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 /* ── SECTION HEADINGS ── */
@@ -114,17 +114,17 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 800;
   color: var(--clr-white);
   line-height: 1.15;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   letter-spacing: -0.02em;
 }
 .section-heading em {
-  font-style: normal;
+  font-style: italic;
   color: var(--clr-cyan);
 }
 .section-intro {
   color: var(--clr-text);
   max-width: 640px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-size: 1.05rem;
 }
 
@@ -234,9 +234,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* disclaimer discreto abaixo do CTA */
 .hero-disclaimer {
-  font-size: 0.72rem;
-  color: rgba(150,150,150,0.5);
-  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(200,200,200,0.6);
+  margin-top: 0.55rem;
   letter-spacing: 0.01em;
 }
 
@@ -1074,7 +1074,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   }
   .hero-inner {
     align-items: center;
-    padding-block: 0 2rem;
+    padding-block: 0 3rem;
   }
   .hero-tiktok-icon { display: none; }
   .hero-content {
@@ -1083,18 +1083,18 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     align-items: center;
     text-align: center;
   }
-  /* headline compacta mas legível */
-  .hero-headline { font-size: clamp(1.45rem, 5.8vw, 1.9rem); margin-bottom: 0.65rem; }
+  .hero-headline { font-size: clamp(1.9rem, 7.5vw, 2.4rem); margin-bottom: 0.8rem; }
   .hero-sub {
-    font-size: 0.85rem;
-    line-height: 1.55;
-    margin-bottom: 1.1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
   }
   .hero-cta-group { align-items: stretch; gap: 0.5rem; }
   .hero-disclaimer { text-align: center; }
   .btn-lg, .btn-xl { width: 100%; justify-content: center; }
   .btn-xl { font-size: 1rem; }
 
+  /* espaçamento padronizado em todas as seções */
   .section-pattern-break,
   .section-not-attending,
   .section-benefits,
@@ -1102,7 +1102,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .section-process,
   .section-authority,
   .section-faq,
-  .section-trust { padding: 4rem 0; }
+  .section-trust { padding: 3.5rem 0; }
+
+  /* headings e labels menores no mobile para respirar */
+  .section-label { margin-bottom: 0.5rem; }
+  .section-heading { margin-bottom: 1rem; }
+  .section-intro { margin-bottom: 1.5rem; font-size: 0.97rem; }
+  .rights-list { margin-bottom: 1.5rem; }
+  .rights-list li { font-size: 0.97rem; }
 
   /* antes/depois empilhado no mobile */
   .before-after { grid-template-columns: 1fr; }
