@@ -161,7 +161,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
 }
 .header-logo {
