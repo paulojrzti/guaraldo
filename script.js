@@ -51,10 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─────────────────────────────────────────────────────
   // 3. SMOOTH REVEAL — Intersection Observer leve
   // ─────────────────────────────────────────────────────
-  const revealEls = document.querySelectorAll(
-    '.consequence-card, .process-step, .mechanism-list li, .authority-card, .comparison-table-wrap'
-  );
-
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -63,11 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-    revealEls.forEach((el, i) => {
-      el.style.setProperty('--delay', `${i * 60}ms`);
-      el.classList.add('reveal');
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      if (!el.style.getPropertyValue('--delay')) {
+        el.style.setProperty('--delay', `${i * 40}ms`);
+      }
       observer.observe(el);
     });
   }

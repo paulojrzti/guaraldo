@@ -34,7 +34,7 @@
   --clr-bad:  var(--clr-red);
 
   /* type */
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-sans:    'Inter', system-ui, sans-serif;
 
   --container: 1140px;
@@ -229,6 +229,22 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+}
+
+/* aviso de restrição de atendimento */
+.hero-announcement {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fbbf24;
+  background: rgba(251,191,36,0.08);
+  border: 1px solid rgba(251,191,36,0.28);
+  padding: 0.3rem 0.9rem;
+  border-radius: 100px;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
 }
 
 /* ícone TikTok acima do badge */
