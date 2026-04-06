@@ -1,14 +1,14 @@
 /* ═══════════════════════════════════════════════════════
-   GUARALDO ADVOGADOS — LP Scripts
+   GUARALDO ADVOGADOS — LP Scripts (Motion.dev Edition)
 ═══════════════════════════════════════════════════════ */
+import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ─────────────────────────────────────────────────────
-  // 1. STICKY HEADER — adiciona classe ao scroll
+  // 1. STICKY HEADER
   // ─────────────────────────────────────────────────────
   const header = document.getElementById('site-header');
-
   const handleScroll = () => {
     if (window.scrollY > 60) {
       header.classList.add('scrolled');
@@ -16,16 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('scrolled');
     }
   };
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // estado inicial
-
+  if (header) {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
 
   // ─────────────────────────────────────────────────────
   // 2. FAQ ACORDEÃO
   // ─────────────────────────────────────────────────────
   const faqItems = document.querySelectorAll('.faq-item');
-
   faqItems.forEach(item => {
     const btn    = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
@@ -47,26 +46,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
   // ─────────────────────────────────────────────────────
-  // 3. SMOOTH REVEAL — Intersection Observer leve
+  // 3. MOTION REVEAL (Framer Motion API para Vanilla)
+  // Agrupa os elementos `.reveal` por seção para animá-los em cascata
   // ─────────────────────────────────────────────────────
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-    document.querySelectorAll('.reveal').forEach((el, i) => {
-      if (!el.style.getPropertyValue('--delay')) {
-        el.style.setProperty('--delay', `${i * 40}ms`);
-      }
-      observer.observe(el);
-    });
-  }
+  const sections = document.querySelectorAll('section, .hero');
+  
+  sections.forEach(section => {
+    const reveals = section.querySelectorAll('.reveal');
+    if(reveals.length > 0) {
+      inView(section, () => {
+        animate(
+          reveals,
+          { opacity: [0, 1], y: [30, 0] },
+          { 
+            duration: 0.7, 
+            delay: stagger(0.12),
+            easing: [0.16, 1, 0.3, 1] // Curva Apple-like (easeOut)
+          }
+        );
+      }, { margin: "-5% 0px -5% 0px" }); // Dispara quando a seção entra 5%
+    }
+  });
 
 });
