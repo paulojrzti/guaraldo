@@ -178,14 +178,24 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  background: url("assets/freepik_refaca-essa-imagem-em-alta-qualidade_0003 1 (1).png") left center / cover no-repeat;
+  justify-content: center;
   overflow: hidden;
+}
+
+/* Pseudo-elemento carrega a imagem de fundo e inverte horizontalmente via CSS */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("assets/freepik_refaca-essa-imagem-em-alta-qualidade_0003 1 (1).png") left 20% / cover no-repeat;
+  transform: scaleX(-1);
+  z-index: 0;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     linear-gradient(
       to bottom,
@@ -194,7 +204,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
       rgba(6,6,6,0.60) 100%
     ),
     linear-gradient(
-      to left,
+      to right,
       rgba(6,6,6,0.98) 0%,
       rgba(6,6,6,0.94) 25%,
       rgba(6,6,6,0.65) 50%,
@@ -205,14 +215,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .hero-inner {
   position: relative;
-  z-index: 1;
-  padding-bottom: 3.5rem;
+  z-index: 2;
+  padding-block: 6rem 3rem;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .hero-content {
-  margin-left: auto;
+  margin-left: 0;
+  margin-right: auto;
   max-width: 500px;
   display: flex;
   flex-direction: column;
@@ -795,15 +806,19 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 @media (max-width: 768px) {
   .hero {
     height: 100dvh;
+  }
+  .hero::before {
     background: url("assets/Dr Reinaldo-1.jpg") center center / cover no-repeat;
+    transform: none;
   }
   .hero-overlay {
     background: linear-gradient(
       to top,
-      rgba(6,6,6,0.98) 0%,
-      rgba(6,6,6,0.85) 35%,
-      rgba(6,6,6,0.30) 65%,
-      rgba(6,6,6,0.08) 100%
+      rgba(6,6,6,1)    0%,
+      rgba(6,6,6,0.95) 30%,
+      rgba(6,6,6,0.80) 55%,
+      rgba(6,6,6,0.25) 78%,
+      rgba(6,6,6,0.05) 100%
     );
   }
   .hero-inner { align-items: center; }
