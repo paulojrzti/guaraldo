@@ -1110,7 +1110,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   /* remove header no mobile — mais espaço e menos distração */
   .site-header { display: none; }
   
-  .mockup-img { max-width: 320px; }
+  .mockup-img { max-width: 220px; }
 
   .hero {
     height: 100dvh;
